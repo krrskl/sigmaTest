@@ -1,18 +1,35 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url(../fonts/Roboto-Regular.ttf)
+  font-family: "Roboto";
+  src: url(../fonts/Roboto-Regular.ttf);
 }
 
-@import 'variables';
+@import "variables";
 
-html {
-  font-size: $root-font-size;
-  font-family: $font-family;
-  max-width: $page-width;
-  margin: 0 auto;
-  text-align: center;
+.card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+  border: none;
+  border-radius: 10px;
+  width: 85%;
 }
 
-p {
-  font-size: $paragraph-font-size;
+$primaryColor: #e13a65;
+.btn {
+  background-color: $primaryColor;
+  border-color: $primaryColor;
+  color: white;
+  box-shadow: none;
+  border-radius: 25px;
+}
+
+@media (max-width: 375px) {
+  .row .ilustration-container {
+    text-align: center !important;
+  }
+
+  .col-12 .logo {
+    width: 50%;
+  }
+  .row .col-12:nth-child(3) p {
+    width: 80% !important;
+  }
 }

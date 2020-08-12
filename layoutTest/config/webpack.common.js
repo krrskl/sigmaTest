@@ -144,6 +144,12 @@ module.exports = {
           context: "src", // prevent display of src/ in filename
         },
       },
+
+      {
+        test: /\.html$/,
+        include: path.resolve(__dirname, "./../src/html"),
+        use: ["raw-loader"],
+      },
     ],
   },
 };
