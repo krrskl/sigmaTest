@@ -1,0 +1,15 @@
+version: "3"
+services:
+  api:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "8082:80"
+
+  front:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "8081:80"
+    depends_on:
+      - api

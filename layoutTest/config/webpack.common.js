@@ -1,8 +1,9 @@
 const paths = require("./paths");
+const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const htmlPlugins = generateHtmlPlugins("./src/html/");
+const fs = require("fs");
 
 const generateHtmlPlugins = (templateDir) => {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -19,6 +20,8 @@ const generateHtmlPlugins = (templateDir) => {
     });
   });
 };
+
+const htmlPlugins = generateHtmlPlugins("./../src/html");
 
 module.exports = {
   /**
